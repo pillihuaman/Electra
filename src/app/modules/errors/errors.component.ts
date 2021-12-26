@@ -7,7 +7,7 @@ import {
   ScrollTopComponent,
   StickyComponent,
   ToggleComponent,
-} from '../../_metronic/kt/components';
+} from '../../@common-components/kt/components';
 
 @Component({
   selector: 'app-errors',
@@ -16,9 +16,9 @@ import {
 })
 export class ErrorsComponent implements OnInit {
   @HostBinding('class') class = 'd-flex flex-column flex-root';
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   routeToDashboard() {
     this.router.navigate(['dashboard']);

@@ -11,7 +11,7 @@ import {
   DropdownMenusModule,
   ChatInnerModule,
   CardsModule,
-} from '../../../_metronic/partials';
+} from '../../../@common-components/partials';
 
 @NgModule({
   declarations: [
@@ -29,4 +29,4 @@ import {
     InlineSVGModule,
   ],
 })
-export class ChatModule {}
+export class ChatModule { }

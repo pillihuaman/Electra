@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LayoutService } from '../../_metronic/layout';
+import { LayoutService } from 'src/app/@data/services/layout.service';
+
 
 type Tabs = 'Header' | 'Toolbar' | 'PageTitle' | 'Aside' | 'Content' | 'Footer';
 
@@ -14,7 +15,7 @@ export class BuilderComponent implements OnInit {
   @ViewChild('form', { static: true }) form: NgForm;
   configLoading: boolean = false;
   resetLoading: boolean = false;
-  constructor(private layout: LayoutService) {}
+  constructor(private layout: LayoutService) { }
 
   ngOnInit(): void {
     this.model = this.layout.getConfig();

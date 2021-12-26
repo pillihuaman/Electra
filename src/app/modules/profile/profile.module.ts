@@ -12,7 +12,7 @@ import {
   CardsModule,
   DropdownMenusModule,
   WidgetsModule,
-} from '../../_metronic/partials';
+} from '../../@common-components/partials';
 
 @NgModule({
   declarations: [
@@ -32,4 +32,4 @@ import {
     CardsModule,
   ],
 })
-export class ProfileModule {}
+export class ProfileModule { }

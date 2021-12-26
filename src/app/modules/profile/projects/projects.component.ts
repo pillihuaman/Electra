@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IconUserModel } from '../../../_metronic/partials';
+import { IconUserModel } from '../../../@common-components/partials';
 
 @Component({
   selector: 'app-projects',
@@ -56,7 +56,7 @@ export class ProjectsComponent implements OnInit {
     { name: 'Rabbin Watterman', initials: 'S', color: 'danger' },
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

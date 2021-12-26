@@ -13,6 +13,7 @@ import { AuthService } from './modules/auth/services/auth.service';
 import { environment } from 'src/environments/environment';
 // #fake-start#
 import { FakeAPIService } from './_fake/fake-api.service';
+import { DomainModule } from './@domain/domain.module';
 // #fake-end#
 
 function appInitializer(authService: AuthService) {
@@ -34,14 +35,15 @@ function appInitializer(authService: AuthService) {
     // #fake-start#
     environment.isMockEnabled
       ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {
-          passThruUnknownUrl: true,
-          dataEncapsulation: false,
-        })
+        passThruUnknownUrl: true,
+        dataEncapsulation: false,
+      })
       : [],
     // #fake-end#
     AppRoutingModule,
     InlineSVGModule.forRoot(),
     NgbModule,
+    DomainModule.forRoot(),
   ],
   providers: [
     {
@@ -53,4 +55,4 @@ function appInitializer(authService: AuthService) {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

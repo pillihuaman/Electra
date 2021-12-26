@@ -17,7 +17,7 @@ export const routes: Routes = [
     path: '',
     canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./_metronic/layout/layout.module').then((m) => m.LayoutModule),
+      import('./@common-components/layout/layout.module').then((m) => m.LayoutModule),
   },
   { path: '**', redirectTo: 'error/404' },
 ];
@@ -26,4 +26,4 @@ export const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

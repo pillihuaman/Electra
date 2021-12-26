@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
-import { WidgetsModule } from '../../_metronic/partials';
+import { WidgetsModule } from '../../@common-components/partials';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -17,4 +17,4 @@ import { WidgetsModule } from '../../_metronic/partials';
     WidgetsModule,
   ],
 })
-export class DashboardModule {}
+export class DashboardModule { }
