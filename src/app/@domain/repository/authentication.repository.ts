@@ -7,8 +7,15 @@ import { EntidadOferta } from '../../@data/model/home/entidadoferta';
 import { Ubigeo } from '../../@data/model/ubigeo';
 import { Convocatoria } from '../../@data/model/convocatoria/convocatoria'; */
 
+import { Observable } from "rxjs";
+import { User } from "../models/user";
+
 
 export abstract class AuthenticationRepository {
+  abstract get getCurrentUserValue(): User;
+  abstract clearUser(): void;
+  abstract login(login: string, clave: string): Observable<any>;
+
   /* 
     abstract get getCurrentUserValue(): User;
     abstract login(login: string, clave: string): Observable<any>;

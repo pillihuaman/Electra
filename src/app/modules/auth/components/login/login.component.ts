@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { UserModel } from '../../models/user.model';
-import { AuthService } from '../../services/auth.service';
+//import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationRepository } from 'src/app/@domain/repository/authentication.repository';
 
 @Component({
   selector: 'app-login',
@@ -27,15 +28,15 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService,
+    private authService: AuthenticationRepository,
     private route: ActivatedRoute,
     private router: Router
   ) {
-    this.isLoading$ = this.authService.isLoading$;
+  //  this.isLoading$ = this.authService.isLoading$;
     // redirect to home if already logged in
-    if (this.authService.currentUserValue) {
+    /*if (this.authService.currentUserValue) {
       this.router.navigate(['/']);
-    }
+    }*/
   }
 
   ngOnInit(): void {
