@@ -12,9 +12,6 @@ export class Const {
   public static APPLICATION_ID: number;
   public static ACCEPT_COOKIE: string;
 
-
-
-
   constructor(private http: HttpClient) {
     Const.ACCEPT_COOKIE = 'ACCEPT_COOKIE';
   }
@@ -32,7 +29,6 @@ export class Const {
       });
   }
 
-
   public loadElectraConfig() {
     return this.http
       .get('./assets/config/electra-web.config.json')
@@ -41,7 +37,6 @@ export class Const {
         Const.USERNAME_SEGURIDAD = config.client_id;
         Const.PASSWORD_SEGURIDAD = config.client_secret;
         Const.APPLICATION_ID = config.aplicacion_id;
-
       })
       .catch((err: any) => {
         console.error(err);

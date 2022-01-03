@@ -1,0 +1,23 @@
+Load app with next features
+
+Angular CLI: 12.2.14
+Node: 16.13.1 (Unsupported)
+Package Manager: npm 8.1.2
+OS: win32 ia32
+
+Angular: 12.1.5
+... animations, common, compiler, compiler-cli, core, forms
+... platform-browser, platform-browser-dynamic, router     
+
+Package                         Version
+---------------------------------------------------------  
+@angular-devkit/architect       0.1201.4
+@angular-devkit/build-angular   12.1.4
+@angular-devkit/core            12.1.4
+@angular-devkit/schematics      12.2.14
+@angular/cdk                    12.2.12
+@angular/cli                    12.2.14
+@angular/material               12.2.12
+@schematics/angular             12.2.14
+rxjs                            6.6.7
+typescript                      4.3.5

@@ -5215,6 +5215,11 @@
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
+"moment@^2.19.3":
+  "integrity" "sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ=="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.1.tgz"
+  "version" "2.29.1"
+
 "ms@^2.0.0", "ms@^2.1.1", "ms@2.1.2":
   "integrity" "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
@@ -5336,6 +5341,13 @@
   dependencies:
     "ngx-window-token" ">=4.0.0"
     "tslib" "^2.0.0"
+
+"ngx-moment@^6.0.2":
+  "integrity" "sha512-HUvDyoJPZKLA3tc+GMQqDpVyCVT2SPfEiV7/CGj2Dwwsn//JhhQ8eTr+RzKqBzLysrXkCwlzulVVJaJ5A0FJEA=="
+  "resolved" "https://registry.npmjs.org/ngx-moment/-/ngx-moment-6.0.2.tgz"
+  "version" "6.0.2"
+  dependencies:
+    "tslib" "^2.3.0"
 
 "ngx-spinner@^13.0.0":
   "integrity" "sha512-q37rOYpRu41+/aHqhfSazHUCz9GAY7+4o3POFC69dW1ew+qB4xyH850lAiCwiNbdhpEOPRShU1litkTxQZJC5A=="

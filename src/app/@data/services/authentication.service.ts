@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/@domain/models/user';
 import { ApiService } from './api.service';
 import Swal from 'sweetalert2';
+import { Utils } from 'src/app/utils/utils';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService extends AuthenticationRepository {
@@ -46,12 +47,22 @@ export class AuthenticationService extends AuthenticationRepository {
     this.currentUserSubject.next(null!);
     return this.verifyCredentials(login, clave).pipe(
       catchError((e) => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: e,
-          footer: '<a href="">Why do I have this issue?</a>',
-        });
+        if (!Utils.empty(e)) {
+          if (!Utils.empty(e.status)) {
+            if (e.status === 400) {
+              if (!Utils.empty(e.error)) {
+                if (!Utils.empty(e.error.detail)) {
+                  Swal.fire({
+                    icon: 'error',
+                    title: e.error.detail,
+                    text: 'Error al autenticar',
+                    //footer: '<a href="">Error al autenticar</a>',
+                  });
+                }
+              }
+            }
+          }
+        }
         //   this.modalService.create();
         return e;
         // throw e;
