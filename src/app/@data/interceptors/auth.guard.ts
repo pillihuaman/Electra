@@ -18,11 +18,35 @@ export class AuthGuard implements CanActivate {
   ) { }
 
   canActivate(
-    routes: ActivatedRouteSnapshot,
+    route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ) {
-    //const currentUser = this.authenticationService.getCurrentUserValue;
+    const currentUser = this.authenticationService.getCurrentUserValue;
+    let snapshot = route.routeConfig?.path;
 
+    if (currentUser) {
+      const helper = new JwtHelperService();
+      const token = localStorage.getItem('token');
+      if (helper.isTokenExpired(token!)) {
+        this.authenticationService.clearUser();
+        this.router.navigate(['/auth/']);
+        setTimeout(() => {
+  //error
+        }, 100);
+        return false;
+      } else if (snapshot   === "auth"  ) {
+        this.router.navigate(['/pages/']);
+        return false;
+      } else {
+        return true;
+      }
+    } else {
+      this.router.navigate(['/auth/']);
+      setTimeout(() => {
+     //error
+      }, 100);
+      return false;
+    }
 
 
     /*if (currentUser) {
@@ -52,6 +76,6 @@ export class AuthGuard implements CanActivate {
       }, 100);
       return false;
     }*/
-    return true;
+  //  return true;
   }
 }

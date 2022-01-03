@@ -10,8 +10,8 @@ export class Const {
   public static USERNAME_SEGURIDAD: string;
   public static PASSWORD_SEGURIDAD: string;
   public static APPLICATION_ID: number;
-  public static DIRECTIVOPUBLICO: string;
   public static ACCEPT_COOKIE: string;
+
 
 
 

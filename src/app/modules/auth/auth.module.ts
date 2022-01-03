@@ -1,3 +1,4 @@
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -9,6 +10,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthComponent } from './auth.component';
 import { TranslationModule } from '../i18n/translation.module';
+import { CommonComponentModule } from 'src/app/@common-components/common-component.module';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,7 @@ import { TranslationModule } from '../i18n/translation.module';
     RegistrationComponent,
     ForgotPasswordComponent,
     LogoutComponent,
-    AuthComponent,
+    AuthComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,7 @@ import { TranslationModule } from '../i18n/translation.module';
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule,CommonComponentModule
   ],
 })
 export class AuthModule {}

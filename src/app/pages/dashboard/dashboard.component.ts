@@ -1,3 +1,4 @@
+import { UserRepository } from 'src/app/@domain/repository/user.repository';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
+  constructor(private userRepository :UserRepository ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void
+  {
+
+    this.getUser();
+
+    
+  }
+
+  getUser()
+  { 
+    this.userRepository.getusers
+
+       this.userRepository
+      .getusers()
+         .subscribe((mc) =>
+         {
+           let v = mc;
+    
+      });
+
+  }
 }

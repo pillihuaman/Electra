@@ -20,9 +20,6 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err) => {
         if (err.status === 401) {
-          // auto logout if 401 response returned from api
-          // this.authenticationService.logout();
-          // location.reload(true);
         }
         if (err.statusText === 'Unknown Error') {
           const error = {
@@ -31,11 +28,8 @@ export class ErrorInterceptor implements HttpInterceptor {
           error.message = 'El servidor no se encuentra disponible';
           return throwError(error);
         } else {
-          const error = err.error.status.error
-            ? err.error.status.error
-            : err.message || err.error.message || err.statusText;
-          error.message = error.messages[0];
-          return throwError(error);
+          console.log(err);
+          return throwError(err);
         }
       })
     );
