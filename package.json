@@ -47,13 +47,13 @@
     "prismjs": "^1.25.0",
     "rxjs": "~6.6.0",
     "socicon": "^3.0.5",
-    "sweetalert2": "^11.3.3",
+    "sweetalert2": "^10.1.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^12.1.4",
-    "@angular/cli": "^12.0.0",
+    "@angular/cli": "^12.2.14",
     "@angular/compiler-cli": "~12.1.2",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",

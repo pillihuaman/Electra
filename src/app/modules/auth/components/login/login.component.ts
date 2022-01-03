@@ -11,6 +11,7 @@ import {
   ModalDismissReasons,
   NgbModalOptions,
 } from '@ng-bootstrap/ng-bootstrap';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

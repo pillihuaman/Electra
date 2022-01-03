@@ -10,6 +10,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { User } from 'src/app/@domain/models/user';
 import { ApiService } from './api.service';
+import Swal from 'sweetalert2';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService extends AuthenticationRepository {
@@ -45,7 +46,13 @@ export class AuthenticationService extends AuthenticationRepository {
     this.currentUserSubject.next(null!);
     return this.verifyCredentials(login, clave).pipe(
       catchError((e) => {
-        this.modalService.create();
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: e,
+          footer: '<a href="">Why do I have this issue?</a>',
+        });
+        //   this.modalService.create();
         return e;
         // throw e;
       })
